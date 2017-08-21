@@ -1,0 +1,6 @@
+MasterPage master = (MasterPage)this.Master;
+master.ShowLicenseErrorImage();
+
+
+ 
+MasterPage é o nome da master

@@ -1,0 +1,2 @@
+UPDATE aspnet_Membership SET Password='password',PasswordFormat= 0 WHERE UserId = '<guid>'
+UPDATE Memberships SET isLockedOut = 0, FailedPasswordAttemptCount = 0 WHERE UserId =  '<guid>'

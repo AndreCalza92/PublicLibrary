@@ -1,0 +1,17 @@
+Como adicionar ROLE para usuarios
+
+Conectar no banco master com o usuario admin:
+No SQL inserir nome master do BD
+
+homologserver.database.windows.net,1433
+user: adminNavegar
+senha: N@v3g@r201406
+
+CREATE LOGIN usTesteRafa WITH password='T3st3R@f@';
+
+Acessar o banco de dados em questão e rodar os scripts:
+
+CREATE USER usTesteRafa FROM LOGIN usTesteRafa;
+EXEC sp_addrolemember 'db_owner', 'usTesteRafa';
+EXEC sp_addrolemember 'db_datareader', 'usTesteRafa';
+EXEC sp_addrolemember 'db_datawriter', 'usTesteRafa';

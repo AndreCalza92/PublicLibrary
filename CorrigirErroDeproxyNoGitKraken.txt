@@ -1,0 +1,4 @@
+git config --global --unset-all http.proxy # to remove it from the global config
+git config --unset-all http.proxy  # to remove it from the local repo config file
+
+Caso tenha problema de proxy ao fazer clone ou push pelo git kraken

@@ -1,0 +1,9 @@
+Comandos para limpar arquivos pdb, dll, bin, obj e etc que já foram commitados pro repositorio.
+
+1º) git rm -r --cached .
+2º) git add .
+3º) git commit -m ".gitignore is now working"
+
+Depois do commit ainda é necessário fazer o push para o commit deixar de ser local e ir para o repositório de fato.
+
+fonte: http://stackoverflow.com/questions/1139762/ignore-files-that-have-already-been-committed-to-a-git-repository

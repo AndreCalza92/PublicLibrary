@@ -1,0 +1,32 @@
+First you have to install the certificate on a windows server.
+Then you must open it and then export it, selecting to export private key as well inserting a password
+
+Problem Description:
+
+In SonicWALL Email Security version 7.4.x version you can import any wild card certificate if you have it in PFX format. If you import a certificate in PFX format then you require PFX certificate and password. You do not require to import a private key because PFX certificate contains the public certificate and its private key.
+
+In certain cases,  if the user is unable to import the PFX certificate even after providing right passphrase and private key into the the SonicWALL Email Security appliance does not accept, you can export the private key and the signed certificate from the PFX file and import it separately. Both the private key and the signed certificate must be in PEM format.
+
+Resolution/Workaround:
+
+Follow below steps to extract public key certificate and private key from a PFX file:
+
+Download and install OpenSSL.
+
+To extract the private key:
+
+Openssl.exe pkcs12 -in <pfx_file_name>.pfx -nocerts -out priv.pem
+
+The generated private key file (priv.pem) will be password protected. To remove the pass phrase from the private key, enter the following command:
+
+Openssl.exe rsa -in priv.pem -out priv.pem
+
+Next step is to extract the public key certificate from the PFX file. There is a direct command in OpenSSL to extract the public key certificate from the PFX file but the generated file will contain public key certificate and some other information. To extract only the public key certificate first we need to convert the PFX file to PEM which contains both private and public key, and then extract the public key certificate from this PEM file:
+
+openssl.exe pkcs12 -in ClientCert1.pfx -out privpub.pem
+
+The generated PEM contains both private and public keys. Use the following command to extract only the public key certificate:
+
+openssl x509 -inform pem -in privpub.pem -pubkey -out pub.pem -outform pem
+
+Once you get the private key (.PEM format) and a public certificate (PEM format) then you can import the certificate along with private key:

@@ -1,0 +1,6 @@
+Abrir o console da AWS
+Acessar EC2
+No painel à esquerda clicar em load balancers abaixo de load balancing
+na lista selecionar o load balance que esta sendo usado na instancia do Ec2 em questão.
+Ir na aba Listener
+Na linha de HTTPS clicar em change na coluna SLL Certificate

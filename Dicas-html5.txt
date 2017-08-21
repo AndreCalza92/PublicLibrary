@@ -1,0 +1,39 @@
+Código para utilização do html5shim
+https://github.com/aFarkas/html5shiv 
+https://github.com/aFarkas/html5shiv/blob/master/dist/html5shiv.min.js
+
+Script para anexar ao html
+
+<!--[if IE]> <script src="js/html5shiv.js"></script> <![endif]-->
+
+Mais elementos HTML 5
+http://www.w3schools.com/html/html5_new_elements.asp
+
+
+Normalize CSS
+
+https://necolas.github.io/normalize.css/
+
+Propriedade box-sizing:
+
+http://www.w3schools.com/cssref/css3_pr_box-sizing.asp
+
+Cantos arredondados:
+
+http://www.w3schools.com/css/css3_borders.asp
+
+Transparências:
+
+http://www.w3schools.com/css/css3_colors.asp
+
+Degradês:
+
+http://www.w3schools.com/css/css3_gradients.asp
+
+Sombras em textos:
+
+http://www.w3schools.com/cssref/css3_pr_text-shadow.asp
+
+Sombras em caixas:
+
+http://www.w3schools.com/cssref/css3_pr_box-shadow.asp

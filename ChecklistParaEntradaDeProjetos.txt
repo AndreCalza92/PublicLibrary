@@ -1,0 +1,21 @@
+Linguagem?
+
+Framework?
+
+Banco de dados?
+
+Ambiente de hospedagem?
+
+BD+Aplicação ou BD e aplicação separados?
+
+Limitações do ambiente? (Ex: Temos acesso para instalar recursos? Limitação de tamanho do BD?)
+
+Qual é a arquitetura de software? (Ex: MVC, codefirst, entity, migrations, devops, etc)
+
+Existem integrações?
+
+Possui CMS?
+
+
+Breve descrição do que o sistema faz:
+

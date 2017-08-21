@@ -1,0 +1,8 @@
+passos para migrar banco SQL com mais facilidade:
+
+1 - No banco de origem criar script somente da estrutura, sem as chaves estrangeiras, somente com PK, identity e afins
+2 - No banco de origem rodar o script gerar_script_de_PK_e_FK.sql
+3 - No banco de destino rodar esse script. (Necessario ter o banco vazio).
+4 - Dependendo do nivel de permissão que tiver é possivel realizar o passo abaixo do banco de destino, caso contrario terá que ser feita a exportação de dados do banco de origem.
+5 - Rodar Importação/exportação dos dados, habilitando nas tabelas inserção de campo identity
+6 - Rodar no banco de dados de destino as queries resultado do passo 2.

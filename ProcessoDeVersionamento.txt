@@ -1,0 +1,15 @@
+1 - Criar projeto no bitbucket
+2 - Fazer primeiro commit com Readme.md
+3 - Fazer commit do codigo fonte caso existente into origin/master
+4 - Através do Kraken habilitar gitflow
+5 - todas funcionalidades devem ser desenvolvidas em features.
+6 - Ao finalizar uma feature ela é automaticamente mergeada com a Develop
+7 - Fechar feature apenas quando puder subir para homologação.
+8 - Criar release para a branche master atualizar com todas as features finalizadas.
+9 - Incluir TAG com numero da Versão pertinente.
+10 - Para liberar para homologação criar uma featurehomologação e nela fazer os merges das features que eu quero
+
+Master = Branch de produção
+Develop = Branch de homologação
+
+HOTFIX - Quando concluido faz automaticamente merge na master e develop

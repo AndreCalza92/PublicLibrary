@@ -1,0 +1,20 @@
+1 -Criar conta no Azure.
+2 -Adicionar Recurso de VM SQL server 2008 R2 in Windows server 2008 R2
+3 -Acessar remoto (MSTSC) Vm usando os dados cadastrados durante a contratação.
+4 -Adicionar Role do WEb IIS
+5 -Adicionar Role FTP Server
+6 -Criar um diretório onde serão armazenados todos os projetos publicados.
+7 -No IIS na hierarquia "Sites" clicar com o botão direito e criar FTP Site
+8 -No painel da Azure é necessario adionar entradas e saidas das portas 80, 21 e 1433 no firewall da VM
+
+
+Server Pay-as-you-go Azure
+Nome: ServerHomolog
+IP: 104.41.60.212
+Usuario: NavegarAdmin
+Senha: N@v3g@r201406
+
+FTP:
+Host: 104.41.60.212
+Usuario: NavegarAdmin
+Senha: N@v3g@r201406

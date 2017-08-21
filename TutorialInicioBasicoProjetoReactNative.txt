@@ -1,0 +1,82 @@
+1 - criar um projeto de padrão
+	react-native init teste
+
+2 - instalar o eslint (CMD dentro da pasta do projeto)
+	npm install --save-dev eslint-config-rallycoding
+
+3 - Incluir rallycoding no sublime
+	Criar um arquivo com o nome ".eslintrc" salva-lo no diretório do projeto com o conteudo
+	{
+	   "extends" : "rallycoding"
+	}
+
+4 - Instalar router flux (CMD dentro da pasta do projeto)
+	npm install --save react-native-router-flux
+	para instalar shoutem UI templates prontos
+	react-native install --save @shoutem/ui
+	npm install --save @shoutem/theme
+
+5 - Rodar o projeto
+	-Abrir o android studio
+	-iniciar o emulador
+	-CMD (de dentro da pasta do projeto) rodar: react-native run-android
+
+6 - (opcional) instalar firebase
+	npm install --save firebase
+
+para rodar em um device, antes de run-android rodar o comando abaixo
+adb reverse tcp:8081 tcp:8081
+
+adb kill-server
+adb start-server
+
+adb devices
+
+Para gerar chave de desenvolvimento Google:
+No cmd acessar a pasta:
+C:\Program Files\Java\jdk1.8.0_121\bin
+Rodar o comando:
+keytool -list -v -keystore "%USERPROFILE%\.android\debug.keystore" -alias androiddebugkey -storepass android -keypass android
+
+para gerar as chaves de publicação (signed apk from terminal):
+1 - keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
+
+2 - Colocar o arquivo gerado acima na pasta android/app
+
+3 - Abrir o arquivo android/gradle.properties adicionar as tags:
+	 MYAPP_RELEASE_STORE_FILE=agendaBox-release-key.keystore
+	 MYAPP_RELEASE_KEY_ALIAS=agendaBox
+	 MYAPP_RELEASE_STORE_PASSWORD=navegar@2021
+	 MYAPP_RELEASE_KEY_PASSWORD=navegar@2021
+
+4 - dentro de android/app/build.gradle adicionar o metodo abaixo logo depois de defaultConfig e antes de splits:
+ signingConfigs {
+        release {
+            storeFile file(MYAPP_RELEASE_STORE_FILE)
+            storePassword MYAPP_RELEASE_STORE_PASSWORD
+            keyAlias MYAPP_RELEASE_KEY_ALIAS
+            keyPassword MYAPP_RELEASE_KEY_PASSWORD
+        }
+    }
+
+adicionar no mesmo arquivo a linha abaixo dentro do buildTypes > release
+	signingConfig signingConfigs.release
+
+5 - para testar build de release antes de subir na loja
+	react-native run-android --variant=release
+
+6 - para gerar o apk signed tem que estar dentro da pasta APP/android e rodar o comando
+	gradlew assembleRelease
+
+7 - o APK saira android/app/build/outputs/apk/app-release.apk
+
+Sempre "buildar" primeiro no android studio
+
+Seguir os passos em:
+https://developers.google.com/maps/documentation/android-api/signup#release-cert
+
+Como pegar o hash key para o facebook
+keytool -exportcert -alias androiddebugkey -keystore %HOMEPATH%\.android\debug.keystore | "C:\OpenSSL-Win32\bin\openssl.exe" sha1 -binary | "C:\OpenSSL-Win32\bin\openssl.exe" base64
+
+
+
